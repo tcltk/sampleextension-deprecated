@@ -47,7 +47,7 @@ OBJECTS = $(exampleA_OBJECTS)
 
 #========================================================================
 # The substitution of "exampleA_LIB_FILE" into the variable name below
-# let's us refer to the objects for the library without knowing the name
+# allows us to refer to the objects for the library without knowing the name
 # of the library in advance.  It also lets us use the "$@" variable in
 # the rule for building the library, so we can refer to both the list of 
 # objects and the library itself in a platform-independent manner.
