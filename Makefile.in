@@ -181,8 +181,8 @@ LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
 
 #========================================================================
 # TEA TARGETS.  Please note that the "libraries:" target refers to platform
-# independant files, and the "binaries:" target inclues executable programs and
-# platform-dependant libraries.  Modify these targets so that they install
+# independent files, and the "binaries:" target inclues executable programs and
+# platform-dependent libraries.  Modify these targets so that they install
 # the various pieces of your package.  The make and install rules
 # for the BINARIES that you specified above have already been done.
 #========================================================================
@@ -191,7 +191,7 @@ all: binaries libraries doc
 
 #========================================================================
 # The binaries target builds executable programs, Windows .dll's, unix
-# shared/static libraries, and any other platform-dependant files.
+# shared/static libraries, and any other platform-dependent files.
 # The list of targets to build for "binaries:" is specified at the top
 # of the Makefile, in the "BINARIES" variable.
 #========================================================================
