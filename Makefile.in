@@ -363,7 +363,7 @@ distclean: clean
 # You should not have to modify this target.
 #========================================================================
 
-install-lib-binaries:
+install-lib-binaries: binaries
 	@mkdir -p $(DESTDIR)$(pkglibdir)
 	@list='$(lib_BINARIES)'; for p in $$list; do \
 	  if test -f $$p; then \
@@ -408,7 +408,7 @@ install-lib-binaries:
 # above if necessary.
 #========================================================================
 
-install-bin-binaries:
+install-bin-binaries: binaries
 	@mkdir -p $(DESTDIR)$(bindir)
 	@list='$(bin_BINARIES)'; for p in $$list; do \
 	  if test -f $$p; then \
