@@ -33,7 +33,7 @@ test sha-1.1 {incorrect command usage} {
 
 test sha-1.2 {incorrect usage of -log2base option} {
     list [catch {sha1 -log2base 0 -string foo} errMsg] $errMsg
-} {1 {invalid log2base: -log2base must be integer in range 1...6}}
+} {1 {parameter to -log2base "0" must be integer in range 1...6}}
 
 # cleanup
 ::tcltest::cleanupTests
