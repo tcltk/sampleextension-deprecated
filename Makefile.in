@@ -352,8 +352,8 @@ distclean: clean
 install-lib-binaries: installdirs
 	@list='$(lib_BINARIES)'; for p in $$list; do \
 	  if test -f $$p; then \
-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(pkglibdir)/$$p"; \
-	    $(INSTALL_DATA) $$p $(DESTDIR)$(pkglibdir)/$$p; \
+	    echo " $(INSTALL_PROGRAM) $$p $(DESTDIR)$(pkglibdir)/$$p"; \
+	    $(INSTALL_PROGRAM) $$p $(DESTDIR)$(pkglibdir)/$$p; \
 	    echo " $(RANLIB) $(DESTDIR)$(pkglibdir)/$$p"; \
 	    $(RANLIB) $(DESTDIR)$(pkglibdir)/$$p; \
 	    ext=`echo $$p|sed -e "s/.*\.//"`; \
@@ -379,9 +379,9 @@ install-lib-binaries: installdirs
 install-bin-binaries: installdirs
 	@list='$(bin_BINARIES)'; for p in $$list; do \
 	  if test -f $$p; then \
-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(bindir)/$$p"; \
-	    $(INSTALL_DATA) $$p $(DESTDIR)$(bindir)/$$p; \
-	  else :; fi; \
+	    echo " $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$p"; \
+	    $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$p; \
+	  fi; \
 	done
 
 .SUFFIXES: .c .$(OBJEXT)
