@@ -347,7 +347,7 @@ install-lib-binaries: installdirs
 	    $(RANLIB) $(DESTDIR)$(bindir)/$$p; \
 	  else :; fi; \
 	done
-	$(TCLSH_PROG) mkIndex.tcl
+	$(TCLSH_PROG) mkIndex.tcl $(lib_BINARIES)
 
 #========================================================================
 # Install binary executables (e.g. .exe files)
