@@ -297,10 +297,12 @@ dist-clean:
 dist: dist-clean
 	mkdir -p $(DIST_DIR)
 	cp -p $(srcdir)/ChangeLog $(srcdir)/README* $(srcdir)/license* \
-		$(srcdir)/Makefile.in $(srcdir)/aclocal.m4 \
-		$(srcdir)/configure $(srcdir)/configure.in  $(DIST_DIR)/
+		$(srcdir)/aclocal.m4 $(srcdir)/configure $(srcdir)/*.in \
+		$(DIST_DIR)/
 	chmod 664 $(DIST_DIR)/Makefile.in $(DIST_DIR)/aclocal.m4
 	chmod 775 $(DIST_DIR)/configure $(DIST_DIR)/configure.in
+
+	cp -p $(srcdir)/*.[ch] $(DIST_DIR)/
 
 	mkdir $(DIST_DIR)/tclconfig
 	cp $(srcdir)/tclconfig/install-sh $(srcdir)/tclconfig/installFile.tcl \
