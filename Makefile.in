@@ -261,7 +261,7 @@ test: binaries libraries
 	LD_LIBRARY_PATH=$(BUILD_DIR):$(TCL_BIN_DIR):$(LD_LIBRARY_PATH) \
 	TCLLIBPATH=. \
 	PATH="$(BUILD_DIR)":"$(TCL_BIN_DIR)":"$(PATH)" \
-	$(TCLSH_PROG) `@CYGPATH@ $(srcdir)/tests/all.tcl` $(TCLTESTARGS)
+	$(TCLSH_PROG) `@CYGPATH@ $(srcdir)/tests/all.tcl` $(TESTFLAGS)
 
 depend:
 
