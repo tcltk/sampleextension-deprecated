@@ -241,8 +241,8 @@ crt = -MT
 !endif
 !endif
 
-TCL_INCLUDES	= -I"$(TCLDIR)\include" -I"$(WINDIR)" -I"$(GENERICDIR)"
-BASE_CLFAGS	= $(cflags) $(cdebug) $(crt) $(TCL_INCLUDES)
+INCLUDES	= $(TCL_INCLUDES) -I"$(WINDIR)" -I"$(GENERICDIR)"
+BASE_CLFAGS	= $(cflags) $(cdebug) $(crt) $(INCLUDES)
 CON_CFLAGS	= $(cflags) $(cdebug) $(crt) -DCONSOLE
 TCL_CFLAGS	= -DUSE_TCL_STUBS -DVERSION="\"$(DOTVERSION)\"" $(BASE_CLFAGS) $(OPTDEFINES)
 
