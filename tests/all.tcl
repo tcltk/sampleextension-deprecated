@@ -18,7 +18,15 @@ set ::tcltest::testSingleFile false
 set ::tcltest::testsDirectory [file dir [info script]]
 
 # We need to ensure that the testsDirectory is absolute
-::tcltest::normalizePath ::tcltest::testsDirectory
+if {[catch {::tcltest::normalizePath ::tcltest::testsDirectory}]} {
+    # The version of tcltest we have here does not support
+    # 'normalizePath', so we have to do this on our own.
+
+    set oldpwd [pwd]
+    catch {cd $::tcltest::testsDirectory}
+    set ::tcltest::testsDirectory [pwd]
+    cd $oldpwd
+}
 
 set chan $::tcltest::outputChannel
 
