@@ -52,14 +52,6 @@ AC_SUBST(VERSION)
 
 eval AC_DEFINE_UNQUOTED(VERSION, "${VERSION}")
 
-#--------------------------------------------------------------------
-# Check whether --enable-gcc or --disable-gcc was given.  Do this 
-# before AC_CYGWIN is called so the compiler can 
-# be fully tested by built-in autoconf tools.
-# This macro also calls AC_PROG_CC to set the compiler if --enable-gcc
-# was not used.
-#--------------------------------------------------------------------
-
 #------------------------------------------------------------------------
 # Handle the --prefix=... option
 #------------------------------------------------------------------------
