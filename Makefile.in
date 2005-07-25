@@ -195,7 +195,7 @@ all: binaries libraries doc
 # of the Makefile, in the "BINARIES" variable.
 #========================================================================
 
-binaries: $(BINARIES) pkgIndex.tcl
+binaries: $(BINARIES)
 
 libraries:
 
