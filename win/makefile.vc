@@ -214,7 +214,7 @@ cdebug	= $(OPTIMIZATIONS)
 !else
 cdebug	=
 !endif
-!else if "$(MACHINE)" == "IA64"
+!else if "$(MACHINE)" == "IA64" || "$(MACHINE)" == "AMD64"
 ### Warnings are too many, can't support warnings into errors.
 cdebug	= -Zi -Od $(DEBUGFLAGS)
 !else
@@ -257,9 +257,9 @@ INCLUDES	= $(TCL_INCLUDES) -I"$(WINDIR)" -I"$(GENERICDIR)"
 BASE_CFLAGS	= $(cflags) $(cdebug) $(crt) $(INCLUDES)
 CON_CFLAGS	= $(cflags) $(cdebug) $(crt) -DCONSOLE
 TCL_CFLAGS	= -DPACKAGE_NAME="\"$(PROJECT)\"" \
-                  -DPACKAGE_VERSION="\"$(DOTVERSION)\"" \
+		  -DPACKAGE_VERSION="\"$(DOTVERSION)\"" \
 		  -DBUILD_$(PROJECT) \
-                  $(BASE_CFLAGS) $(OPTDEFINES)
+		  $(BASE_CFLAGS) $(OPTDEFINES)
 
 #---------------------------------------------------------------------
 # Link flags
@@ -395,7 +395,7 @@ $<
 
 {$(WINDIR)}.rc{$(TMP_DIR)}.res:
 	$(rc32) -fo $@ -r -i "$(GENERICDIR)" -D__WIN32__ \
-		-DCOMMAVERSION=$(DOTVERSION:.=,),0 \
+		-DCOMMAVERSION=$(DOTVERSION:.=,),0,0 \
 		-DDOTVERSION=\"$(DOTVERSION)\" \
 		-DVERSION=\"$(VERSION)$(SUFX)\" \
 !if $(DEBUG)
