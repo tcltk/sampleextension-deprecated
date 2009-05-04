@@ -422,6 +422,8 @@ $(OUT_DIR)\pkgIndex.tcl: $(ROOT)\pkgIndex.tcl.in
 @PACKAGE_NAME@       $(PROJECT)
 @PKG_LIB_FILE@       $(PRJLIBNAME)
 <<
+	@echo package ifneeded Tclsha1 $(DOTVERSION) \
+	    [list load [file join $$dir $(PRJLIBNAME)] Sample] >> $@
 
 #---------------------------------------------------------------------
 # Installation. (EDIT)
