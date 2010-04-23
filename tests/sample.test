@@ -16,7 +16,7 @@ if {[lsearch [namespace children] ::tcltest] == -1} {
     namespace import ::tcltest::*
 }
 
-package require Tclsha1
+package require sample
 
 test sha-1.1 {Use of -string operand} {
     set result [sha1 -string foo]
