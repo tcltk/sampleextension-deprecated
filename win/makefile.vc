@@ -225,7 +225,7 @@ cdebug	= -Zi -WX $(DEBUGFLAGS)
 
 ### Declarations common to all compiler options
 cwarn = $(WARNINGS) -D _CRT_SECURE_NO_DEPRECATE -D _CRT_NONSTDC_NO_DEPRECATE
-cflags = -nologo -c $(COMPILERFLAGS) $(cwarn) -Fp$(TMP_DIR)^\
+cflags = -nologo -c $(COMPILERFLAGS) -DBUILD_sample $(cwarn) -Fp$(TMP_DIR)^\
 
 !if $(MSVCRT)
 !if $(DEBUG) && !$(UNCHECKED)
