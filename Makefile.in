@@ -147,7 +147,7 @@ SHARED_BUILD	= @SHARED_BUILD@
 INCLUDES	= @PKG_INCLUDES@ @TCL_INCLUDES@
 #INCLUDES	= @PKG_INCLUDES@ @TCL_INCLUDES@ @TK_INCLUDES@ @TK_XINCLUDES@
 
-PKG_CFLAGS	= @PKG_CFLAGS@ -DBUILD_sample
+PKG_CFLAGS	= @PKG_CFLAGS@
 
 # TCL_DEFS is not strictly need here, but if you remove it, then you
 # must make sure that configure.in checks for the necessary components
